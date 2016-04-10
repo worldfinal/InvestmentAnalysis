@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 import com.frc.investment.model.stockmarket.StockMarketRequest;
 import com.frc.investment.service.IStockMarketService;
-import com.scorpiowf.utils.IOUtil;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
