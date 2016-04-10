@@ -1,0 +1,19 @@
+
+var fun_tb = function(idx_tb, tb) {
+	var str = "<table>";
+	var fun = function(idx, item) {
+		str += "<tr>";
+		$("div.cell", item).each(function(idx_td, item_td){
+			str += "<td>" + $(item_td).text() + "</td>";
+		});
+		str += "</tr>";
+	}					
+
+	$("div.tr, div.th", tb).each(fun);
+	
+	str += "</table>";	
+	var obj = $(str);
+	$(tb).before(obj);
+}
+
+$(".table").each(fun_tb);

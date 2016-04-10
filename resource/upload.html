@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false"></script>
+		<link rel="stylesheet" href="dojo/dijit/themes/claro/claro.css"></link>
+		<script type="text/javascript">
+			function sendFile() {
+				dojo.require("dojo.io.iframe");
+				dojo.io.iframe.send({  
+			        form: "fileForm",  
+			        url: "wf/Sample",  
+			        method: "post",
+			        handleAs: "html",  
+			        content: {
+			        	"command":"upload"
+			        },
+			        handle: function(data, ioArgs) {
+			        	console.log("[wf]data:" + data);
+						wf = data;
+						return data;
+					},
+					error:function(response) {
+						console.log("[wf]error:" + response);
+					}
+			    });  
+			}
+		</script>
+	</head>
+	<body class="claro">
+		<div data-dojo-type="dijit/layout/TabContainer">
+			<div data-dojo-type="dijit/layout/ContentPane">
+				<div>ACMICPC success</div>
+				v12
+		
+				<form id="fileForm" name="fileForm" action="wf/Sample" method="post"
+					enctype="multipart/form-data">
+		
+					<input type="hidden" name="method" value="upload" />
+					
+					<input
+						data-dojo-type="dojox/form/Uploader" multiple="false" id="file"
+						name="file" type="file" label="Select file(s)"></input>
+		 <!-- 
+		 			<input type="file" name="file"></input>
+		 			 -->
+					 
+		        <input type="submit" value="upload"/>  
+		   
+		
+				</form>
+				<a href="javascript:sendFile();">go</a>
+			</div>
+		</div>
+	</body>
+</html>

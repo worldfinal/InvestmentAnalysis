@@ -1,0 +1,26 @@
+<div>
+	<form id="fileForm" name="fileForm" action="wf/Sample" method="post"
+		accept-charset="UTF-8"
+		enctype="multipart/form-data">
+
+		<input type="text" name="type" value="AGTD" />
+		<input type="hidden" name="method" value="upload" /> <input
+			data-dojo-type="dojox/form/Uploader" multiple="false" id="file"
+			name="file" type="file" label="Select file(s)"></input>
+		<!-- 
+		 			<input type="file" name="file"></input>
+		 			 -->
+<!-- 
+		<input data-dojo-type="dijit/form/Button"
+		data-dojo-props="title:'Upload', label:'Upload'" 
+		type="submit" value="upload" />
+ -->
+
+	</form>
+	<input data-dojo-type="dijit/form/Button"
+		data-dojo-props="label:'go', id:'btn_upload'" 
+		dojoAttachPoint="_do_upload" 
+		data-dojo-event="click: sendFile"
+		type="submit" value="upload" />
+		
+</div>

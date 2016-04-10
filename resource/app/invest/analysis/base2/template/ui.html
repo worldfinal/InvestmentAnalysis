@@ -1,0 +1,94 @@
+<div>
+	<div style="width:50%; float:left;padding-right:30px;">
+		<form name="base2_form">
+			<div class="inputDiv">
+				<div class="inputFiledName">类型</div>
+				<div class="inputElement">
+					<select data-dojo-type="dijit/form/Select" name="type">
+						<option value="AGTD">AG(T+D)</option>
+						<option value="AUTD">AU(T+D)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="inputHalfDivLeft">
+				<div class="inputFiledName">从</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/DateTextBox" 
+					data-dojo-props="label:'from', 
+					name:'fromDate', 
+					id:'base2_fromDate', 
+					constraints:{datePattern:'yyyy/MM/dd'},
+					value:'2014/02/01'" 
+					data-dojo-attach-point="_fromDate"
+					value="2014/02/01"
+					type="text" />
+				</div>
+			</div>
+			
+			<div class="inputHalfDivRight">
+				<div class="inputFiledName">到</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/DateTextBox" 
+					data-dojo-props="label:'to', 
+					name:'toDate', 
+					id:'base2_toDate', 
+					constraints:{datePattern:'yyyy/MM/dd'},
+					value:'2014/12/31'"
+					data-dojo-attach-point="_toDate"
+					value="2015/02/01"
+					type="text" label="To"/>
+				</div>
+			</div>
+			
+			<div class="inputDiv">
+				<div class="inputFiledName">买入/卖出</div>
+				<div class="inputElement">
+					<select data-dojo-type="dijit/form/Select" name="param">
+						<option value="BUY">买入</option>
+						<option value="SELL">卖出</option>
+					</select>
+				</div>
+			</div>
+				
+			<div class="inputDiv">
+				<div class="inputFiledName">开仓价格</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/NumberTextBox"
+							data-dojo-props="name:'price'" 
+							data-dojo-attach-point="_price"/>
+				</div>
+			</div>
+			
+			<div class="inputDiv">
+				<div class="inputFiledName">赚几多？</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/NumberTextBox"
+							data-dojo-props="name:'earn'" 
+							data-dojo-attach-point="_earn"/>
+				</div>
+			</div>
+		</form>
+		
+		<div class="inputDiv">
+			<div class="inputFiledName"></div>
+			<div class="inputElement">
+					<button  
+						data-dojo-props="label:'submit', id:'base2_btn_submit'"
+						data-dojo-attach-point="_submitButton"
+						>Submit</button >
+			</div>
+		</div>
+	</div>
+	
+	<div style="width:40%;float:left;padding-left:40px;" id="base2_result"
+		data-dojo-attach-point="resultNode">
+		<div data-dojo-attach-point="requestInfo"
+		id="base2_requestInfo" >
+		</div>
+		<div data-dojo-attach-point="resultContainerNode" 
+		id="base2_grid_container"
+		style="width: 100%; height: 500px;">
+		</div>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+<div>
+	<div style="width:30%">
+		<div data-dojo-type="dojo/store/Memory"
+		    data-dojo-id="base2_typeStore"
+		    data-dojo-props="data: [{name: 'AGTD'}, {name: 'AUTD'}]"></div>
+		<input data-dojo-type="dijit/form/ComboBox" 
+		data-dojo-props="id:'base2_combo_type', store:base2_typeStore" 
+		data-dojo-attach-point="_type"
+		name="base2_type">
+		</input>	
+			
+		<input data-dojo-type="dijit/form/DateTextBox" 
+				data-dojo-props="label:'from', 
+				name:'base2_fromDate', 
+				id:'base2_fromDate', 
+				constraints:{datePattern:'yyyy/MM/dd'},
+				value:'2014/02/01'" 
+				data-dojo-attach-point="_fromDate"
+				value="2014/02/01"
+				type="text" />
+		<input data-dojo-type="dijit/form/DateTextBox" 
+				data-dojo-props="label:'to', 
+				name:'base2_toDate', 
+				id:'base2_toDate', 
+				constraints:{datePattern:'yyyy/MM/dd'},
+				value:'2014/12/31'"
+				data-dojo-attach-point="_toDate"
+				value="2015/02/01"
+				type="text" label="To"/>
+		<br/>
+		BUY/SELL
+		<div data-dojo-type="dojo/store/Memory"
+    data-dojo-id="base2_stateStore"
+    data-dojo-props="data: [{name: 'BUY'}, {name: 'SELL'}]"></div>
+		<input data-dojo-type="dijit/form/ComboBox" 
+		data-dojo-props="id:'base2_combo_param', store:base2_stateStore"
+		data-dojo-attach-point="_param"
+		name="base2_param">
+		</input>
+		
+		<br/>开仓价格
+		<input data-dojo-type="dijit/form/NumberTextBox"
+		data-dojo-props="name:'base2_price'" 
+		data-dojo-attach-point="_price"/>
+		
+		<br/>赚几多？
+		<input data-dojo-type="dijit/form/NumberTextBox"
+		data-dojo-props="name:'base2_earn'" 
+		data-dojo-attach-point="_earn"/>
+		
+		<input data-dojo-type="dijit/form/Button" 
+		data-dojo-props="label:'submit', id:'base2_btn_submit'"
+		data-dojo-attach-point="_submitButton"
+		 data-dojo-attach-event="click:sendRequest"
+		/>
+	</div>
+	
+	<div style="width:70%" id="base2_result">
+	</div>
+</div>

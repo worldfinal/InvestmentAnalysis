@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		var dojoConfig = {
+			parseOnLoad:true,
+			isDebug:false,
+			packages: [
+			{name:"app", location:"/app"}
+			]
+		};
+	</script>
+		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false"></script>
+		<script src="dojo/dojo/mydojo.js"></script>
+		<link rel="stylesheet" href="dojo/dijit/themes/claro/claro.css"></link>
+		<link rel="stylesheet" href="dojo/dojo/resources/dojo.css"></link>
+		<link rel="stylesheet" href="dojo/dojox/grid/resources/claroGrid.css"></link>
+		<link rel="stylesheet" href="app/css/input.css"></link>
+	
+	</head>
+	<body class="claro">
+		<div>ACMICPC - AG(T+D) version1.6</div>
+		<div data-dojo-type="app/invest/analysis/base2/base2" 
+		data-dojo-props="title:'ACM TEST', id:'pane_base2'"
+		style="height:800px">
+			<!-- 
+			<div data-dojo-type="dijit/layout/ContentPane" 
+			data-dojo-props="title:'ACM TEST', id:'testPane'">
+				
+				Just a test
+			</div>
+			  -->
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<div>
+	<div style="width:50%; float:left;padding-right:30px;">
+		<form name="base1_form">
+			<div class="inputDiv">
+				<div class="inputFiledName">类型</div>
+				<div class="inputElement">
+					<select data-dojo-type="dijit/form/Select" name="type">
+						<option value="AGTD">AG(T+D)</option>
+						<option value="AUTD">AU(T+D)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="inputHalfDivLeft">
+				<div class="inputFiledName">从</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/DateTextBox" 
+					data-dojo-props="label:'from', 
+					name:'fromDate', 
+					id:'fromDate', 
+					constraints:{datePattern:'yyyy/MM/dd'},
+					value:'2014/02/01'" 
+					data-dojo-attach-point="_fromDate"
+					value="2014/02/01"
+					type="text" />
+				</div>
+			</div>
+			
+			<div class="inputHalfDivRight">
+				<div class="inputFiledName">到</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/DateTextBox" 
+					data-dojo-props="label:'to', 
+					name:'toDate', 
+					id:'toDate', 
+					constraints:{datePattern:'yyyy/MM/dd'},
+					value:'2014/12/31'"
+					data-dojo-attach-point="_toDate"
+					value="2015/02/01"
+					type="text" label="To"/>
+				</div>
+			</div>
+			
+			<div class="inputHalfDivLeft">
+				<div class="inputFiledName">价格</div>
+				<div class="inputElement">
+					<select data-dojo-type="dijit/form/Select" name="param">
+						<option value="1">高于</option>
+						<option value="2">低于</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="inputHalfDivRight">
+				<div class="inputFiledName">价格</div>
+				<div class="inputElement">
+					<input data-dojo-type="dijit/form/NumberTextBox"
+							data-dojo-props="name:'price'" 
+							data-dojo-attach-point="_price"/>
+				</div>
+			</div>
+		</form>
+		<div class="inputDiv">
+			<div class="inputElement">
+				<button  
+					data-dojo-props="label:'submitBTN', id:'btn_submit'"
+					data-dojo-attach-point="_submitButton"
+					>OK</button >
+			</div>
+		</div>
+	</div>
+	
+	<div style="width:40%;float:left;padding-left:40px;" id="base1_result">
+	</div>
+</div>

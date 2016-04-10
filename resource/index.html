@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		var dojoConfig = {
+			parseOnLoad:true,
+			isDebug:false,
+			packages: [
+			{name:"app", location:"/app"}
+			]
+		};
+	</script>
+		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false"></script>
+		<script src="dojo/dojo/mydojo.js"></script>
+		<link rel="stylesheet" href="dojo/dijit/themes/claro/claro.css"></link>
+		<link rel="stylesheet" href="dojo/dojo/resources/dojo.css"></link>
+		<link rel="stylesheet" href="dojo/dojox/grid/resources/claroGrid.css"></link>
+		<link rel="stylesheet" href="app/css/input.css"></link>
+		<!-- 
+		<style>
+			#grid {
+			    width: 600px;
+			    height: 500px;
+			}
+		</style>
+		 -->
+		<script type="text/javascript">
+		 	dojo.require("dijit.layout.ContentPane");
+	       	dojo.require("dijit.layout.TabContainer");
+	       	require(["app/invest/uploadUI/uploadUI",
+	       	         "app/invest/util/wfParser",
+	       	         "app/invest/analysis/base1/base1",
+	       	      	 "app/invest/analysis/base2/base2",
+			         "dojo/ready"], 
+				function(uploadUI, wfParser, 
+						Base1, Base2, ready){
+					ready(function(){
+						var paneUpload = new uploadUI({id:"upload_main", title:"上传数据"});
+						console.log(paneUpload.id);
+						
+						//dojo.parser.parse("upload_main");
+						//paneUpload._parseAllItem(paneUpload.id);
+						var main = dijit.byId("main");
+						main.addChild(paneUpload, 0);
+						
+						var p = new wfParser();
+						console.log(p);
+						p.parse("upload_main");
+						paneUpload.init();
+						main.selectChild(paneUpload);
+						
+						var base1 = new Base1({id:"pane_base1", title:"Base1"});
+						main.addChild(base1);
+						dojo.parser.parse(base1);
+						base1.init();
+						
+						var base2 = new Base2({id:"pane_base2", title:"Base2"});
+						main.addChild(base2);
+						dojo.parser.parse(base2);
+						base2.init();	
+					});	
+			
+			});
+		</script>
+	</head>
+	<body class="claro">
+		<div>ACMICPC - AG(T+D) version1.6</div>
+		<div data-dojo-type="dijit/layout/TabContainer" id="main"
+		style="height:800px">
+			<!-- 
+			<div data-dojo-type="dijit/layout/ContentPane" 
+			data-dojo-props="title:'ACM TEST', id:'testPane'">
+				
+				Just a test
+			</div>
+			  -->
+		</div>
+		
+	</body>
+</html>
