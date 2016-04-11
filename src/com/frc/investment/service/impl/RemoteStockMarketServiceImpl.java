@@ -1,5 +1,6 @@
 package com.frc.investment.service.impl;
 
+import java.io.File;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -19,7 +20,7 @@ public class RemoteStockMarketServiceImpl implements IStockMarketService {
 	
 	@Override
 	public List<StockMarketResponse> queryResult(StockMarketRequest request) {
-		String result = stockMarketDao.queryResult(request);
+		
 		String fileName = "StockMarket";
 		if (!StringUtil.isEmpty(request.getTicker())) {
 			fileName += "_Ticker[" + request.getTicker() + "]";
@@ -33,7 +34,15 @@ public class RemoteStockMarketServiceImpl implements IStockMarketService {
 		}
 		fileName += ".txt";
 		String fullName = "D:\\output\\" + fileName;
-		System.out.println("Length of data:" + result.length());
+		
+		File file = new File(fullName);
+		if (file.exists() && file.isFile()) {
+			System.out.println("File already exists:" + fullName);
+			return null;
+		}
+		
+		String result = stockMarketDao.queryResult(request);
+//		System.out.println("Length of data:" + result.length());
 		System.out.println("Output to : " +fullName);
 		IOUtil.writeStringToFile(fullName, result);
 		return null;
