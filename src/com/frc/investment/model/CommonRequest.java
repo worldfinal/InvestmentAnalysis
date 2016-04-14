@@ -5,6 +5,8 @@ public class CommonRequest {
 	protected String ticker;
 	protected String tradeDate;
 	protected String field;
+	protected String beginDate;	 //起始日期，输入格式“YYYYMMDD”
+	protected String endDate;	 //截止日期，输入格式“YYYYMMDD”
 	public String getSecID() {
 		return secID;
 	}
@@ -28,5 +30,17 @@ public class CommonRequest {
 	}
 	public void setField(String field) {
 		this.field = field;
+	}
+	public String getBeginDate() {
+		return beginDate;
+	}
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 }
