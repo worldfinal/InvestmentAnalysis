@@ -55,7 +55,7 @@ public class GetFund extends BaseClient{
 	
 	@Test
 	public void batchGetFundDivm() throws Exception {
-		String startDate = "20071231";
+		String startDate = "20060601";
 		String endDate = "20060101";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		Date date1 = sdf.parse(startDate);

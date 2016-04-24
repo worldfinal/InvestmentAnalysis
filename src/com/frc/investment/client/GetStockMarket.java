@@ -42,8 +42,8 @@ public class GetStockMarket {
 	
 	@Test
 	public void test() throws ParseException, InterruptedException {
-		String startDate = "20030102";
-		String endDate = "20031231";
+		String startDate = "20160412";
+		String endDate = "20160421";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		Date date1 = sdf.parse(startDate);
 		Date date2 = sdf.parse(endDate);

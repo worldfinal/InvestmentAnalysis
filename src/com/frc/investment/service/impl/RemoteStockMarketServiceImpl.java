@@ -33,7 +33,7 @@ public class RemoteStockMarketServiceImpl implements IStockMarketService {
 			fileName += "_TradeDate[" + request.getTradeDate() + "]";
 		}
 		fileName += ".txt";
-		String fullName = "D:\\output\\StockMarket\\2003\\" + fileName;
+		String fullName = "D:\\output\\StockMarket\\2016\\" + fileName;
 		
 		File file = new File(fullName);
 		if (file.exists() && file.isFile()) {
