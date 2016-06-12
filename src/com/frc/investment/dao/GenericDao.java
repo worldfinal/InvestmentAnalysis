@@ -32,6 +32,7 @@ public class GenericDao {
 		HttpGet httpGet = new HttpGet(url);
 		//在header里加入 Bearer {token}，添加认证的token，并执行get请求获取json数据
         httpGet.addHeader("Authorization", "Bearer " + ACCESS_TOKEN);
+        
         CloseableHttpResponse response = httpClient.execute(httpGet);
         HttpEntity entity = response.getEntity();
         String body = EntityUtils.toString(entity);
